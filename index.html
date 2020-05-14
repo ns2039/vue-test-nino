@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>産業技術研究所 powered by キカガク</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<body>
+<div class="container">
+    <header v-if="a===3" id='app'>
+             <a :href="url">
+                <img :src= "img_url" width="150" :alt="img_alt">
+                <font size="24" color=black>産業技術研究所 powered by hogehoge </font>
+            </a>
+        <button type="button" class="btn btn-primary">購読者数<span class="badge badge-light">200 人</span>
+        </button>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">産業技術研究所とは<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">注目記事</a>
+                <a class="nav-item nav-link" href="#">お問い合わせ</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <section id="head" class="jumbotron text-center" style="background: rgb(238, 238, 238) !important;">
+        <div class="container">
+            <h1>AI x 日本の産業技術 で世界の未来を創る</h1><br> 
+            <p>これからの日本の再興にむけて今何ができるのか。<br>
+            それは、日本の各産業をAIをはじめとした先端技術を活用して世界をリードする企業を増やしていくことだと考えます。 <br> 
+            本サイトでは、各業界に特化したAIの活用ケースとこれからの日本産業の可能性を最大化を目指し、発信するメディアです。</p>
+        </div>  
+    </section>
+    
+    <section>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 1100px;" style="height: 00px;"   >
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://toyokeizai.net/mwimgs/a/7/-/img_a7c13a56f4386558d8f28bab129d2dc7549505.jpg" width="100"  class="d-block w-100" alt="car">
+            </div>
+            <div class="carousel-item">
+                <img src="https://disruptionhub.com/wp-content/uploads/2017/02/Trading-Chart-Analysis-Courses-Forex-Shares-1905225-e1487837434215.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.readwrite.com/wp-content/uploads/2020/02/Can-Artificial-Intelligence-Replace-the-Role-of-Doctors-1-825x500.png" class="d-block w-100" alt="...">
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ジャンルを選ぶ
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">製造</a>
+          <a class="dropdown-item" href="#">医療</a>
+          <a class="dropdown-item" href="#">金融</a>
+        </div>
+      </div>
+
+    <section id= 'blog'>
+        <div>
+        <h4>製造分野特化</h4>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div v-for="item in items" class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" img src="https://cdn.pixabay.com/photo/2017/04/13/20/26/artificial-intelligence-2228610_960_720.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+                            <div class="card-body">
+                            <p class="card-text">
+                                <span v-html="item.name"></span>    
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button @click="btnClick" type="button" class="btn btn-sm btn-outline-secondary">詳細へ</button>
+                                </div>
+                                <small class="text-muted">{{item.minutes}} mins read</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+   
+        
+    </section>
+
+    <section>
+        <div>
+        <h4>医療分野特化</h4>
+        <div class="album py-5 bg-light">
+            <div class="hoge">
+        
+                <div class="row">
+
+                    <div v-for="item in items" class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Coming Soon</text></svg>
+                            <div class="card-body">
+                            <p class="card-text">
+                                <span>Coming Soon</span>
+                            </p>
+                            <div class>
+                                <div class="btn-group">
+                                    <button @click="btnClick" type="button" class="btn btn-sm btn-outline-secondary">詳細へ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+   
+        
+    </section>
+    
+
+    <section>
+        <div>
+        <h4>金融分野特化</h4>
+        <div class="album py-5 bg-light">
+            <div class="hoge">
+        
+                <div class="row">
+
+                    <div v-for="item in items" class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Coming Soon</text></svg>
+                            <div class="card-body">
+                            <p class="card-text">
+                                <span>Coming Soon</span>
+                            </p>
+                            <div class>
+                                <div class="btn-group">
+                                    <button @click="btnClick" type="button" class="btn btn-sm btn-outline-secondary">詳細へ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+   
+        
+    </section>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Topに戻る</li>
+        </ol>
+      </nav>
+      
+    <table class="table table-striped">
+        <h3>人気記事</h3>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">記事タイトル</th>
+            <th scope="col">業界</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>かすかな異常音を聞き分けるAI、職人技をデータ化かすかな異常音を聞き分けるAI、職人技をデータ化</td>
+            <td>製造</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>コンピュータービジョンで製造作業員の動きのエラーを検知</td>
+            <td>製造</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>製造業向けIoTプラットフォーム、IoTとAIで製造現場のDX化</td>
+            <td>製造</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <div class="modal-body">
+        <h2>最新AI活用資料配布中</h2>
+        <p>こちらからAI活用資料を <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">ダウンロード</a> いただけます。</p>
+        <hr>
+
+        <div class="alert alert-primary" role="alert">
+            法人様向け活用事例のバックナンバーもございますので、そちらにつきましては直接お問い合わせくださいませ。
+        </div>
+     </div>
+    
+    <form>
+        <h2>ニュースレターの登録はこちらから（おかげさまで登録者数20万人まであと僅か） </h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">95%
+                </div>
+            </div>
+            
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input v-model="mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+
+<nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>  
+</div>
+
+
+
+    <!-- Vue.js に必要なパッケージ -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+
+<script>
+    // Vue クラスを app という名前でインスタンス化
+    const app = new Vue({
+        //contianerの中にあったら、vue　の対象内という設定をする
+        el: '.container', 
+        // 連想配列を使用することが基本
+        data: {
+
+            url:'https://ja.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD', 
+            img_url: 'https://icon-pit.com/wp-content/uploads/2020/01/ai_zunou_5289-300x300.png', 
+            img_alt: 'ai', 
+            show: true, 
+            a:3, 
+            mail: '', 
+            items:[ 
+                {
+                    name: 'かすかな異常音を聞き分けるAI、職人技をデータ化',
+                    minutes: 9
+                }, 
+                {
+                    name: 'コンピュータービジョンで製造作業員の動きのエラーを検知',
+                    minutes: 10 
+                }, 
+                {
+                    name: '製造業向けIoTプラットフォーム、<br>IoTとAIで製造現場のDX化',
+                    minutes: 11 
+                }
+              ],
+            }, 
+
+        methods: {
+            btnClick() {
+                console.log('Click!')
+            } 
+        }
+        })
+</script>
+
+
+
+</html>
